@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  resources :posts do
+  	resources :comments
+  end
+
+  root 'posts#index'
 end
